@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import board.qna.command.qaCommand;
+import board.qna.command.qaConCommand;
 import board.qna.command.qaListCommand;
 
 /**
@@ -51,6 +52,10 @@ public class qaController extends HttpServlet {
 			qac = new qaListCommand();
 			qac.execute(req, res);
 			viewPage = "listQnA.jsp";
+		}else if(com.equals("/qaContent.khy")) {
+			qac = new qaConCommand();
+			qac.execute(req, res);
+			viewPage = "contentQnA.jsp";
 		}
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/qaboard/" + viewPage);

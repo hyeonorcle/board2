@@ -26,7 +26,8 @@
 		<c:forEach  var="l" items="${list}">
 		<tr style="border-bottom:1px solid lightgrey">
 			<td style="width:150px">${l.qa_id}</td>
-			<td>${l.qa_sub}</td>
+			<td><a href="qaConCommand.khy?qa_id=${l.qa_id}" name="subject">${l.qa_sub}</a>
+			<c:if test="${l.qa_count>0}">[답변 완료]</c:if></td>
 			<td style="width:150px">${l.qa_date}</td>
 			<td style="width:150px">${l.qa_name}</td> 
 		</tr>				
